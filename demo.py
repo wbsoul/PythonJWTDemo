@@ -9,8 +9,8 @@ response = requests.get("https://login.microsoftonline.com/common/discovery/keys
 jwks = response.json()
 
 # configuration, these can be seen in valid JWTs from Azure B2C:
-valid_audiences = ['yyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy'] # id of the application (i.e managed Identity) receiving the token
-issuer = 'https://sts.windows.net/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx/' # iss
+valid_audiences = ['{Application-ID}'] # id of the application (i.e managed Identity) receiving the token
+issuer = 'https://sts.windows.net/{tenantid}/' # iss in JWT and issuer in https://login.microsoftonline.com/common/.well-known/openid-configuration
 
 
 class InvalidAuthorizationToken(Exception):
