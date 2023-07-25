@@ -8,9 +8,11 @@ This code is a fork for the one been described in this blog post: [https://rober
 
 # Install requirements
 Note: `cryptography` package might require extra dependencies, please refer to its documentation to know how to install it.
-pip install 
+```
+pip install asn1crypto cffi cryptography idna pycparser PyJWT six
+```
 
-# Example
+# Run Example
 ```bash
 python demo.py <JWT>
 ```
