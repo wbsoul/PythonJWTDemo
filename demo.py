@@ -47,6 +47,7 @@ def validate_jwt(jwt_to_validate):
                          verify=True,
                          algorithms=['RS256'],
                          audience=valid_audiences,
+                         options={"verify_exp": False},  #remove this for prod, use this just for testing with old expired token
                          issuer=issuer)
 
     # do what you wish with decoded token:
