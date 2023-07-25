@@ -6,7 +6,7 @@ import requests
 
 # obtain jwks from "https://login.microsoftonline.com/common/discovery/keys"). jwks_uri found in https://login.microsoftonline.com/common/.well-known/openid-configuration
 response = requests.get("https://login.microsoftonline.com/common/discovery/keys")
-jwks = response.json()['keys']
+jwks = response.json()
 
 # configuration, these can be seen in valid JWTs from Azure B2C:
 valid_audiences = ['yyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy'] # id of the application (i.e managed Identity) receiving the token
